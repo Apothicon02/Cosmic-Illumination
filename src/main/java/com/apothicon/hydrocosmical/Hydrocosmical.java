@@ -1,15 +1,15 @@
-package com.apothicon.terraflat;
+package com.apothicon.hydrocosmical;
 
 import dev.crmodders.cosmicquilt.api.entrypoint.ModInitializer;
 import org.quiltmc.loader.api.ModContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Terraflat implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger("Terraflat");
+public class Hydrocosmical implements ModInitializer {
+	public static final Logger LOGGER = LoggerFactory.getLogger("Hydrocosmical");
 
 	@Override
 	public void onInitialize(ModContainer mod) {
-		LOGGER.info("Terraflat Initialized!");
+		LOGGER.info("Hydrocosmical Initialized!");
 	}
 }

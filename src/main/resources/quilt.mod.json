@@ -10,22 +10,22 @@
 
     "metadata": {
       "name": "${mod_name}",
-      "description": "Stuff",
+      "description": "Worldgen mod for Cosmic Reach.",
       "contributors": {
         "Author": "Apothicon"
       },
 
       "contact": {
-        "homepage": "https://github.com/Apothicon02/Terraflat",
+        "homepage": "https://github.com/Apothicon02/Hydrocosmical",
         "issues": "https://discord.gg/HHqKa8vTAN",
-        "sources": "https://github.com/Apothicon02/Terraflat"
+        "sources": "https://github.com/Apothicon02/Hydrocosmical"
       },
 
-      "icon": "assets/terraflat/icon.png"
+      "icon": "assets/hydrocosmical/icon.png"
     },
 
     "entrypoints": {
-      "init": "com.apothicon.terraflat.Terraflat"
+      "init": "com.apothicon.hydrocosmical.Hydrocosmical"
     },
 
     "depends": [
@@ -40,5 +40,6 @@
     ]
   },
 
-  "mixin": "terraflat.mixins.json"
+  "access_widener": "hydrocosmical.accesswidener",
+  "mixin": "hydrocosmical.mixins.json"
 }
