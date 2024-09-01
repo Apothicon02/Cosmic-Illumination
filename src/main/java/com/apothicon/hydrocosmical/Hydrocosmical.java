@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class Hydrocosmical implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("Hydrocosmical");
+	public static boolean isHydrocosmicalRegistered = false;
 
 	@Override
 	public void onInitialize(ModContainer mod) {
