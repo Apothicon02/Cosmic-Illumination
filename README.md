@@ -1,3 +1,3 @@
-# Hydrocosmical
+# Cosmic Illumination
 
-Worldgen mod for Cosmic Reach. 
+Improving the visuals of Cosmic Reach. 

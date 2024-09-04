@@ -16,16 +16,16 @@
       },
 
       "contact": {
-        "homepage": "https://github.com/Apothicon02/Hydrocosmical",
+        "homepage": "https://github.com/Apothicon02/Cosmic-Illumination",
         "issues": "https://discord.gg/HHqKa8vTAN",
-        "sources": "https://github.com/Apothicon02/Hydrocosmical"
+        "sources": "https://github.com/Apothicon02/Cosmic-Illumination"
       },
 
-      "icon": "assets/hydrocosmical/icon.png"
+      "icon": "assets/cosmicillumination/icon.png"
     },
 
     "entrypoints": {
-      "init": "com.apothicon.hydrocosmical.Hydrocosmical"
+      "init": "com.apothicon.cosmicillumination.CosmicIllumination"
     },
 
     "depends": [
@@ -40,6 +40,5 @@
     ]
   },
 
-  "access_widener": "hydrocosmical.accesswidener",
-  "mixin": "hydrocosmical.mixins.json"
+  "mixin": "cosmicillumination.mixins.json"
 }
