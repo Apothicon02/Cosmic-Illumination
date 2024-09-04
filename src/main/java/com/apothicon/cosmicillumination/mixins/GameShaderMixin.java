@@ -25,7 +25,7 @@ public abstract class GameShaderMixin {
             Player player = InGame.getLocalPlayer();
             if (player != null) {
                 Chunk chunk = player.getChunk(InGame.world);
-                if (chunk.isGenerated()) {
+                if (chunk != null) {
                     BlockState state = player.getZone(InGame.world).getBlockState(new Vector3(player.getPosition().x, player.getPosition().y + 2f, player.getPosition().z));
                     if (state != null) {
                         isUnderwater = state.isFluid ? 1 : 0;
