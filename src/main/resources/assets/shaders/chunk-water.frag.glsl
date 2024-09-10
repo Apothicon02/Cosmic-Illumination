@@ -96,7 +96,8 @@ void main()
     outColor.rgb = max(outColor.rgb, texColor.rgb * worldAmbientColor);
 
     //Cosmic Illumination
-    outColor.rgb = hsv2rgb(rgb2hsv(outColor.rgb)+vec3(0, 1, 0.3)); //Boost saturation and brightness.
+    vec3 hsv = rgb2hsv(outColor.rgb);
+    outColor.rgb = hsv2rgb(vec3(hsv.x, min(1, outColor.b*4), hsv.z+0.3)); //Boost brightness and adjust saturation based on blueness.
     float dist = max(0, logisticDepth(gl_FragCoord.z, 0.1, 1, 0.01, 100)-0.15)*1.15;//Base fog lighting.
     outColor.rgb = (outColor.rgb*min(1, abs(dist-1)*1.2))+(skyAmbientColor*(dist*1.3)); //Smoothly transition to normal lighting based on blocklight.
     //Cosmic Illumination End

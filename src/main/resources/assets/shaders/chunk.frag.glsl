@@ -107,12 +107,12 @@ void main()
     //texColor = vec4(1);
 
     outColor = tintColor * vec4(texColor.rgb * lightTint, texColor.a);
-    
-    outColor.rgb = max(outColor.rgb, texColor.rgb * worldAmbientColor);
 
     //Cosmic Illumination
+    outColor.rgb = outColor.rgb - (texColor.rgb/10); //Ambient Occlusion.
+    float redDimmer = 1+(outColor.r/10);
     vec3 hsvColor = rgb2hsv(outColor.rgb);
-    outColor.rgb = hsv2rgb(hsvColor+vec3(0, ((max(max(lightTint.r, lightTint.g), lightTint.b))-0.7+max(max(newSkyAmbientColor.r, newSkyAmbientColor.g), newSkyAmbientColor.b))/10, min(1, hsvColor.z)-hsvColor.z)); //Brightness based saturation.
+    outColor.rgb = hsv2rgb(hsvColor+vec3(0, ((max(max(lightTint.r, lightTint.g), lightTint.b))-0.7+max(max(newSkyAmbientColor.r, newSkyAmbientColor.g), newSkyAmbientColor.b))/10, min(1, hsvColor.z*redDimmer) - (hsvColor.z*redDimmer))); //Brightness based saturation.
     if (isUnderwater == 1) {
         float waterDist = logisticDepth(gl_FragCoord.z, 0.1, 10, 0.1, 100);
         vec3 newOutColor = (outColor.rgb/9)+(vec3(0.2, 0.2, 0.4)*max(0.2, skyColor.b)); //Base water lighting, with brightness reduced based on the skys blueness.
@@ -120,7 +120,7 @@ void main()
         vec3 notUnderwaterMul = max((t/15), abs(waterDist-1))-0.15;
         outColor.rgb = (newOutColor*underwaterMul)+(outColor.rgb*notUnderwaterMul); //Smoothly transition to normal lighting based on blocklight.
     } else {
-        float dist = max(0, (logisticDepth(gl_FragCoord.z, 0.1, 1, 0.01, 100)-0.2));//Base fog.
+        float dist = max(0.3, (logisticDepth(gl_FragCoord.z, 0.1, 1, 0.01, 100)))-0.3;//Base fog.
         outColor.rgb = (outColor.rgb*min(1, abs(dist-1)*1.2))+(skyAmbientColor*(dist*1.3)); //Smoothly transition to normal lighting based on blocklight.
     }
     //Cosmic Illumination End
