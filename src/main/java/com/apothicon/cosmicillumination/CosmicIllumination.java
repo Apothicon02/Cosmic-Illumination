@@ -14,8 +14,8 @@ public class CosmicIllumination implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		LOGGER.info("Cosmic Illumination Initialized!");
 
-		Gdx.files.classpath("assets/shaders/chunk.frag.glsl").copyTo(Gdx.files.absolute(SaveLocation.getSaveFolderLocation() + "/mods/assets/shaders/chunk.frag.glsl"));
-		Gdx.files.classpath("assets/shaders/chunk-water.frag.glsl").copyTo(Gdx.files.absolute(SaveLocation.getSaveFolderLocation() + "/mods/assets/shaders/chunk-water.frag.glsl"));
-		Gdx.files.classpath("assets/shaders/sky.frag.glsl").copyTo(Gdx.files.absolute(SaveLocation.getSaveFolderLocation() + "/mods/assets/shaders/sky.frag.glsl"));
+		Gdx.files.classpath("assets/base/shaders/chunk.frag.glsl").copyTo(Gdx.files.absolute(SaveLocation.getSaveFolderLocation() + "/mods/assets/base/shaders/chunk.frag.glsl"));
+		Gdx.files.classpath("assets/base/shaders/chunk-water.frag.glsl").copyTo(Gdx.files.absolute(SaveLocation.getSaveFolderLocation() + "/mods/assets/base/shaders/chunk-water.frag.glsl"));
+		Gdx.files.classpath("assets/base/shaders/sky.frag.glsl").copyTo(Gdx.files.absolute(SaveLocation.getSaveFolderLocation() + "/mods/assets/base/shaders/sky.frag.glsl"));
 	}
 }
